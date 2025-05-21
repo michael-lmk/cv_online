@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-
-import "./Sidebar.css";
-import { Link, useNavigate } from "react-router-dom";
-import { Button, Offcanvas, OffcanvasBody, OffcanvasHeader } from "reactstrap";
+import { useState } from "react";
+import "./SideBar.css";
+import { Button, Offcanvas, OffcanvasBody } from "reactstrap";
 import { FaBars } from "react-icons/fa";
 
 const Sidebar = ({ handleRotate }) => {
