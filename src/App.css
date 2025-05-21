@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@100;400;500;700&display=swap');
+
+:root {
+  --sidebar-width: 200px;
+  --custom-color: rgba(80, 158, 74, 0.987);
+  /* Largeur de la sidebar */
+}
+
+.app {
+  width: 100vw;
+}
+
+body {
+  margin: 0;
+  background-color: #222;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+

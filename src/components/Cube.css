@@ -1,0 +1,101 @@
+/* Variables pour les dimensions */
+:root {
+  --sidebar-width: 180px;
+  --cube-size: calc(100vw - var(--sidebar-width));
+  /* Taille du cube */
+  --perspective: 1200px;
+  /* Profondeur de l'effet 3D */
+}
+
+@media (max-width: 850px) {
+  .app {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  :root {
+    --sidebar-width: 0px;
+    --cube-size: calc(100vw - var(--sidebar-width));
+    /* Taille du cube */
+    --perspective: 1200px;
+    /* Profondeur de l'effet 3D */
+  }
+}
+
+/* Reset */
+body {
+  margin: 0;
+  background-color: rgb(37, 41, 53);
+  overflow: hidden;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: rgb(41, 43, 49);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* Conteneur du cube avec perspective */
+.cube-container {
+  width: var(--cube-size);
+  height: 100vh;
+  perspective: var(--perspective);
+  position: relative;
+  left: var(--sidebar-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cube */
+.cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+  /* Déplacer le centre de rotation */
+  transform-origin: center center calc(calc(var(--cube-size) / 2) * -1);
+
+}
+
+
+.cube.shrinking {
+  /* Rétrécit légèrement */
+  transform: scale(0.5);
+}
+
+/* Faces du cube */
+.cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color: rgba(49, 55, 75, 1);
+  border: 1px solid rgba(255, 255, 255, 0.446);
+}
+
+/* Position des faces du cube */
+.cube-face.front {
+  transform: translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube-face.back {
+  transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube-face.left {
+  transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube-face.right {
+  transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2));
+}
