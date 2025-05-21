@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import "./App.css";
-import Sidebar from "./components/layout/SideBar/Sidebar";
+import Sidebar from "./components/layout/SideBar/SideBar";
 import Cube from "./components/Cube";
 
 
