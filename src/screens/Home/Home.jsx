@@ -3,7 +3,7 @@ import "./Home.css";
 import imgbg from "../../assets/img_background.webp";
 const HomePage = () => {
   return (
-    <div className="home-content">
+    <div className="container home-content">
       <div className="left-content">
         <div className="intro">
           <h2>
