@@ -17,6 +17,7 @@
 .about {
   height: 100%;
   padding-top: 50px;
+  align-content: center;
 }
 
 .about h2 {
