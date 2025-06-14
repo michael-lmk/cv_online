@@ -1,6 +1,9 @@
 // src/pages/Skills.jsx
 import React from "react";
-
+import "./Skills.css";
+import { CircularProgressbarWithChildren } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import { FaReact } from "react-icons/fa";
 
 const skills = [
   { name: "JavaScript", level: 90 },
@@ -10,29 +13,25 @@ const skills = [
   { name: "HTML", level: 90 },
   { name: "Git", level: 70 },
   { name: "Redux", level: 65 },
-  { name: "TypeScript", level: 70 },
+  { name: "TypeScript", level: 70 }
 ];
 
 export default function Skills() {
   return (
-    <div className="container py-5 text-light" style={{  minHeight: "100vh" }}>
-      <h1 className="text-center mb-5">Mes Compétences</h1>
+    <div
+      className="skills container py-5 text-light"
+      style={{ minHeight: "100vh" }}>
+      <h1 className="text-center mb-4">Mes Compétences</h1>
       <div className="row">
-        {skills.map((skill, index) => (
-          <div className="col-md-6 mb-4" key={index}>
-            <h5 className="d-flex justify-content-between">
-              <span>{skill.name}</span>
-              <span>{skill.level}%</span>
-            </h5>
-            <div className="progress">
-              <div
-                className="progress-bar bg-success"
-                role="progressbar"
-                style={{ width: `${skill.level}%` }}
-                aria-valuenow={skill.level}
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
+        {skills.map((skill) => (
+          <div className="col-lg-4 col-md-4 sm-12 my-2">
+            <div className="skill-card">
+              <CircularProgressbarWithChildren value={66}>
+                <strong>{skill.name}</strong>
+                <div style={{ fontSize: 12, marginTop: 5 }}>
+                  <strong>{skill.level}%</strong>
+                </div>
+              </CircularProgressbarWithChildren>
             </div>
           </div>
         ))}
